@@ -1,0 +1,376 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Variables ===== */
+body {
+  /* Colors */
+  --bw-100: #181743;
+  --bw-200: #3f474b;
+  --bw-300: #7f8a8f;
+  --bw-400: #bec7cc;
+  --bw-500: #dde6ea;
+  --bw-600: #f3f8fb;
+  --bw-700: #ffffff;
+
+  --burple-100: #271e64;
+  --burple-200: #5034ff;
+  --burple-300: #bebdff;
+  --burple-400: #6d6af4;
+  --burple-500: #dfe8ff;
+
+  --green-100: #1877bc;
+  --green-200: #0db8ae;
+  --green-300: #4edbd2;
+  --green-400: #9bfff9;
+  --green-500: #d9fffd;
+
+  --alert-red-100: #ee1313;
+  --alert-red-200: #fd5d5d;
+  --alert-red-300: #ff9e9e;
+  --alert-red-400: #ffd4d4;
+
+  --alert-green-100: #039700;
+  --alert-green-200: #2ad027;
+  --alert-green-300: #92f590;
+  --alert-green-400: #c7fec6;
+
+  --alert-yellow-100: #ea7e00;
+  --alert-yellow-200: #ffa53c;
+  --alert-yellow-300: #ffc27a;
+  --alert-yellow-400: #ffebc5;
+
+  --main-font: Poppins, arial, sans-serif;
+  background-color: rgb(239, 247, 255);
+
+}
+
+/* ===== Typographie ===== */
+
+h1,
+.title-01 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 144px;
+  color: var(--bw-100);
+}
+
+h2,
+.title-02 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 108px;
+  color: var(--bw-100);
+}
+
+h3,
+.title-03 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 80px;
+  color: var(--bw-100);
+}
+
+h4,
+.title-04 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 66px;
+  color: var(--bw-100);
+}
+
+h5,
+.title-05 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--bw-100);
+}
+
+h6,
+.title-06 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--bw-100);
+}
+
+.paragraph-01 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 72px;
+  color: var(--bw-100);
+}
+
+.paragraph-02 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 54px;
+  color: var(--bw-100);
+}
+
+.paragraph-03 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--bw-100);
+}
+
+.paragraph-04 {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--bw-100);
+}
+
+/* ===== Button ===== */
+
+button,
+.button {
+  border-radius: 40px;
+  transition: all ease-in-out 125ms;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-family: var(--main-font);
+}
+
+button.large,
+.button.large {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+button.large:not(.text),
+.button.large:not(.text) {
+  padding: 24px 32px;
+}
+
+button.medium,
+.button.medium {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+button.medium:not(.text),
+.button.medium:not(.text) {
+  padding: 20px 24px;
+}
+
+button.small,
+.button.small {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+button.small:not(.text),
+.button.small:not(.text) {
+  padding: 12px 20px;
+}
+
+button.primary,
+.button.primary {
+  background: var(--burple-200);
+  color: var(--bw-700);
+  border: none;
+}
+
+button.primary:hover,
+.button.primary:hover {
+  background: var(--burple-100);
+}
+
+button.secondary,
+.button.secondary {
+  background: var(--bw-700);
+  border: 3px solid var(--bw-100);
+  color: var(--bw-100);
+}
+
+button.secondary:hover,
+.button.secondary:hover {
+  background: var(--bw-100);
+  color: var(--bw-700);
+}
+
+button.tertiary,
+.button.tertiary {
+  background: var(--burple-500);
+  border: 3px solid var(--bw-100);
+  color: var(--burple-100);
+}
+
+button.tertiary:hover,
+.button.tertiary:hover {
+  background: var(--bw-100);
+  color: var(--bw-700);
+}
+
+button.text,
+.button.text {
+  background: none;
+  color: var(--burple-200);
+  border: none;
+}
+
+button.text:hover,
+.button.text:hover {
+  color: var(--burple-100);
+}
+
+/* ===== Input ===== */
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.input label {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--bw-100);
+}
+
+.input input {
+  /* Désactive la bordure par défaut du navigateur */
+  outline: none;
+}
+
+.input input::placeholder {
+  color: var(--bw-400);
+}
+
+/* Lorsque le placeholder est affiché
+   = lorsque le champ est vide */
+.input input:placeholder-shown {
+  border: 3px solid black /*var(--burple-400)*/;
+}
+
+/* Lorsque le placeholder est n'est pas affiché
+   = lorsque le champ est rempli */
+.input input:not(:placeholder-shown) {
+  border: 3px solid blue /*var(--burple-300)*/;
+}
+
+/* Champ rempli valid, sans focus */
+.input input:not(:placeholder-shown):valid:not(:focus) {
+  border: 3px solid green /*var(--xxx)*/;
+}
+
+/* Champ rempli invalid, sans focus */
+.input input:not(:placeholder-shown):invalid:not(:focus) {
+  border: 3px solid red /*var(--xxx)*/;
+}
+
+.input .helper {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--bw-300);
+}
+
+/* ======= Header ======= */
+
+header .contenu{
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style-type: none;
+}
+
+header .gauche {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+
+.x-card {
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 15px;
+  height: 400px;
+  background-color: white;
+}
+
+.blog-posts .posts {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  column-gap: 24px;
+  row-gap: 36px;
+}
+
+.contenu {
+  max-width: 1000px;
+  margin: auto;
+}
+
+img {
+  border-radius: 15px;
+  width: 280px;
+  height: 180px;
+  margin: 0;
+}
+
+.x-card .title-02 {
+  font-size: 30px;
+  height: 50px;
+  margin-top: -20px;
+}
+
+.x-card .title-04 {
+  font-size: 20px;
+  height: 50px;
+  color: var(--bw-300);
+}
+
+.x-card .paragraph-04 {
+  overflow: auto;
+}
+
+.contenu-card {
+  margin: 15px;
+}
+
+@media screen and (min-width: 500px) {
+  .blog-posts .posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+

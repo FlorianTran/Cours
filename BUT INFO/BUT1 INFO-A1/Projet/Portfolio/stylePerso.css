@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: Poppins, sans-serif;
+  color: rgb(14, 14, 14);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html {
+  background: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.home-background {
+  width: 100vw;
+  height: 80vh;
+  background: url(images/Background.jpg) no-repeat center center fixed;
+}
+
+.home-background .home-container {
+  display: flex;
+  flex-direction: row;
+  width: 1083px;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  top: 25vh;
+  column-gap: 100px;
+}
+
+.home-background h1 {
+  font-size: 110px;
+  font-weight: 500;
+  width: 550px;
+  line-height: 110px;
+  letter-spacing: 15px;
+  color: white;
+}
+
+.home-background p {
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.home-background .portfolio {
+  background: linear-gradient(
+    90deg,
+    rgb(183, 0, 255),
+    rgb(255, 157, 247),
+    rgb(0, 217, 255)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 5px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.background {
+  /* background: url(images/Background.jpg) no-repeat center center fixed; */
+  background: white;
+  height: 300px;
+  width: 100vw;
+  padding: 30px;
+}
+
+.nav-bar {
+  font-size: 40px;
+  margin: 20px;
+  text-decoration: none;
+  letter-spacing: 5px;
+}
+
+h1 {
+  font-size: 80px;
+  letter-spacing: 15px;
+  font-weight: 500;
+  margin: auto;
+  width: 930px;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(8, 245px);
+  grid-template-rows: repeat(8, 245px);
+  grid-auto-flow: dense;
+  background-blend-mode: multiply;
+}
+
+.container .box {
+  background-color: rgb(219, 219, 219);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.box .content {
+  background: rgba(0, 0, 0, 0.096);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+span {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.box:hover .content {
+  opacity: 100%;
+  transition-duration: 1s;
+}
+
+.container .box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 4;
+  background: url(images/music.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(1) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.container .box:nth-child(1) p {
+  font-size: 25px;
+  color: white;
+  line-height: 2.5;
+}
+
+.container .box:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: url(images/Handball.jpeg);
+  background-size: contain;
+}
+
+.container .box:nth-child(2) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(2) p {
+  font-size: 25px;
+  color: white;
+}
+
+.container .box:nth-child(3) {
+  grid-column: span 2;
+  grid-row: span 3;
+  background: url(images/deadlift.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(3) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(3) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 1.5;
+}
+
+.container .box:nth-child(4) {
+  grid-column: span 2;
+  grid-row: span 3;
+  background: url(images/animals.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(4) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(4) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 2.5;
+}
+
+.container .box:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 1;
+  background: url(images/Sneaker.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(5) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(5) p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.container .box:nth-child(6) {
+  grid-column: span 4;
+  grid-row: span 2;
+  background: url(images/making_music.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(6) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(6) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 3;
+}
+
+.container .box:nth-child(7) {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: url(images/Anime.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(7) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(7) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 1.5;
+}
+
+.container .box:nth-child(8) {
+  grid-column: span 2;
+  grid-row: span 3;
+  background: url(images/informatique.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(8) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(8) p {
+  margin-top: 15px;
+  font-size: 25px;
+  color: white;
+  line-height: 2.5;
+}
+
+.container .box:nth-child(9) {
+  grid-column: span 2;
+  grid-row: span 3;
+  background: url(images/draw.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(9) h3 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(9) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 2;
+}
+
+.container .box:nth-child(10) {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: url(images/japan.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(10) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(10) p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+  line-height: 1.5;
+}
+
+.container .box:nth-child(11) {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: url(images/nature.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(11) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(11) p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: white;
+  line-height: 2.5;
+}
+
+.container .box:nth-child(12) {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: url(images/streatwear.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(12) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(12) p {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}
+
+.container .box:nth-child(13) {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: url(images/alone.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(13) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(13) p {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  line-height: 2;
+}
+
+.container .box:nth-child(14) {
+  grid-column: span 2;
+  grid-row: span 1;
+  background: url(images/Robot.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(14) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(14) p {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}
+
+.container .box:nth-child(15) {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: url(images/los-angeles.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(15) h3 {
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(15) p {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}
+
+.container .box:nth-child(16) {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: url(images/lol.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.container .box:nth-child(16) h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.container .box:nth-child(16) p {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  line-height: 1;
+}

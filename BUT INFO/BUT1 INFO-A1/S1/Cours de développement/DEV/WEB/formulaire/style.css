@@ -1,0 +1,17 @@
+header {
+  font-size: 35px;
+}
+
+p {
+  font-size: 25px;
+}
+
+.photo {
+  height: 200px;
+  width: 400px;
+}
+
+.icone {
+  height: 16px;
+  width: 16px;
+}

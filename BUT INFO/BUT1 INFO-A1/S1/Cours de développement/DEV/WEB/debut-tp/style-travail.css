@@ -1,0 +1,133 @@
+body {
+  padding: 10px 25px;
+}
+
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > h5,
+body > h6 {
+  margin: 35px 0;
+}
+
+.x-couleurs {
+  display: flex;
+  gap: 25px;
+}
+
+.x-couleur {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.x-bw-100 {
+  background-color: var(--bw-100);
+}
+.x-bw-200 {
+  background-color: var(--bw-200);
+}
+.x-bw-300 {
+  background-color: var(--bw-300);
+}
+.x-bw-400 {
+  background-color: var(--bw-400);
+}
+.x-bw-500 {
+  background-color: var(--bw-500);
+}
+.x-bw-600 {
+  background-color: var(--bw-600);
+}
+.x-bw-700 {
+  background-color: var(--bw-700);
+}
+
+.x-burple-100 {
+  background-color: var(--burple-100);
+}
+.x-burple-200 {
+  background-color: var(--burple-200);
+}
+.x-burple-300 {
+  background-color: var(--burple-300);
+}
+.x-burple-400 {
+  background-color: var(--burple-400);
+}
+.x-burple-500 {
+  background-color: var(--burple-500);
+}
+
+.x-green-100 {
+  background-color: var(--green-100);
+}
+.x-green-200 {
+  background-color: var(--green-200);
+}
+.x-green-300 {
+  background-color: var(--green-300);
+}
+.x-green-400 {
+  background-color: var(--green-400);
+}
+.x-green-500 {
+  background-color: var(--green-500);
+}
+
+.x-alert-red-100 {
+  background-color: var(--alert-red-100);
+}
+.x-alert-red-200 {
+  background-color: var(--alert-red-200);
+}
+.x-alert-red-300 {
+  background-color: var(--alert-red-300);
+}
+.x-alert-red-400 {
+  background-color: var(--alert-red-400);
+}
+.x-alert-red-500 {
+  background-color: var(--alert-red-500);
+}
+
+.x-alert-green-100 {
+  background-color: var(--alert-green-100);
+}
+.x-alert-green-200 {
+  background-color: var(--alert-green-200);
+}
+.x-alert-green-300 {
+  background-color: var(--alert-green-300);
+}
+.x-alert-green-400 {
+  background-color: var(--alert-green-400);
+}
+.x-alert-green-500 {
+  background-color: var(--alert-green-500);
+}
+
+.x-alert-yellow-100 {
+  background-color: var(--alert-yellow-100);
+}
+.x-alert-yellow-200 {
+  background-color: var(--alert-yellow-200);
+}
+.x-alert-yellow-300 {
+  background-color: var(--alert-yellow-300);
+}
+.x-alert-yellow-400 {
+  background-color: var(--alert-yellow-400);
+}
+.x-alert-yellow-500 {
+  background-color: var(--alert-yellow-500);
+}
+
+.x-buttons {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+}

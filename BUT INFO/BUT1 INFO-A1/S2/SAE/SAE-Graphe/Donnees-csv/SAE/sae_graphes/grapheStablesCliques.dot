@@ -1,0 +1,16 @@
+graph G{
+	//node [shape=plaintext];
+	
+	node1 [label="1"]; 	
+	node2 [label="2"]; 	
+	node3 [label="3"]; 	
+	node4 [label="4"]; 	
+	node5 [label="5"]; 	 		 		
+	
+	node1 -- node3;
+	node1 -- node4; 
+	node1 -- node5;
+	node2 -- node3;
+	node3 -- node4;
+	node4 -- node5;
+}

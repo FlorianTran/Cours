@@ -1,0 +1,4 @@
+package quick
+
+func QuickShort() {
+}
