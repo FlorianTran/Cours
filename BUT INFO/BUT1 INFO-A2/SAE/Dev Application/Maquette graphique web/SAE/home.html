@@ -10,49 +10,64 @@
   <body>
     <?php include 'header.php';?>
     <header>
-      <nav>
-        <ul>
-          <li class="logo-nav">
-            <div></div>
-          </li>
-          <li class="search-nav">
-            <div id="cover">
-              <form action="">
-                <div class="tp">
-                  <div class="td">
-                    <input
-                      type="text"
-                      autocomplete="off"
-                      placeholder="Rechercher..."
-                      id="srcbar"
-                      required
-                    />
+      <nav id="nav">
+        <div class="over">
+          <ul>
+            <li class="logo-nav">
+              <div></div>
+            </li>
+            <li class="search-nav">
+              <div id="cover">
+                <form action="">
+                  <div class="tp">
+                    <div class="td">
+                      <input
+                        type="text"
+                        autocomplete="off"
+                        placeholder="Rechercher..."
+                        id="srcbar"
+                        required
+                      />
+                    </div>
+                    <div class="td" id="s-cover">
+                      <button type="submit">
+                        <div id="s-circle"></div>
+                        <span></span>
+                      </button>
+                    </div>
                   </div>
-                  <div class="td" id="s-cover">
-                    <button type="submit">
-                      <div id="s-circle"></div>
-                      <span></span>
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </li>
-          <li class="panier-nav">
-            <a href="">Mon panier</a>
-          </li>
-          <li class="connexion-nav">
-            <a href="">Connexion</a>
-            <button id="btn">S'inscrire</button>
-          </li>
-        </ul>
+                </form>
+              </div>
+            </li>
+            <li class="panier-nav">
+              <a href="">Mon panier</a>
+            </li>
+            <li class="connexion-nav">
+              <a href="">Connexion</a>
+              <button id="btn">S'inscrire</button>
+            </li>
+          </ul>
+        </div>
+        <div class="under " id="under">
+          <ul>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Lorem</a></li>
+            <li><a href="">Lorem</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <article class="container">
       <section id="home">
         <div class="section-container">
-          <h1>Bonjour</h1>
+          <h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. At eveniet
+            enim perferendis
+          </h2>
         </div>
       </section>
 
@@ -62,10 +77,9 @@
         </div>
       </section>
     </article>
-    
-    
+
     <script src="home.js"></script>
-    
+
     <?php include 'footer.php';?>
   </body>
 </html>

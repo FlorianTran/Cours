@@ -34,31 +34,38 @@ a {
 }
 
 nav {
-  /* background-color: rgba(216, 216, 216, 0.3); */
-  /* backdrop-filter: blur(5px); */
-  height: 90px;
-  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
   margin: 0;
   padding: 0;
-  justify-content: center;
   font-size: 20px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
+  width: 100%;
 }
 
-nav ul {
+
+nav .over{
+  height: 90px;
+  width: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+nav .over ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   align-items: center;
 }
 
-nav ul .logo-nav {
+nav .over ul .logo-nav {
   margin-left: 3%;
 }
 
-nav ul .logo-nav div {
+nav .over ul .logo-nav div {
   background-image: url("unknown.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,23 +74,23 @@ nav ul .logo-nav div {
   width: 75px;
 }
 
-nav ul .search-nav {
+nav .over ul .search-nav {
   height: 90px;
   width: 500px;
 }
 
-nav ul li #cover .tb {
+nav .over ul li #cover .tb {
   display: table;
   width: 100%;
 }
 
-nav ul li #cover .td {
+nav .over ul li #cover .td {
   display: table-cell;
   vertical-align: middle;
 }
 
-nav ul li #cover input,
-nav ul li #cover button {
+nav .over ul li #cover input,
+nav .over ul li #cover button {
   color: #fff;
   padding: 0;
   margin: 0;
@@ -91,7 +98,7 @@ nav ul li #cover button {
   background: none;
 }
 
-nav ul li #cover {
+nav .over ul li #cover {
   position: relative;
   width: 200%;
   left: -30%;
@@ -104,28 +111,28 @@ nav ul li #cover {
   background-color: rgba(255, 255, 255, 0.171);
 }
 
-nav ul li #cover input[type="text"] {
-  width: 180%;
+nav .over ul li #cover input[type="text"] {
+  width: 150%;
   height: 96px;
   font-size: 40px;
   line-height: 1;
+  padding-right: 400px;
 }
 
-nav ul li #cover input[type="text"]::placeholder {
+nav .over ul li #cover input[type="text"]::placeholder {
   color: rgb(175, 175, 175);
 }
 
-nav ul li #cover form button {
+nav .over ul li #cover form button {
   position: relative;
   display: block;
-  left: 490%;
   width: 84px;
   height: 96px;
   cursor: pointer;
   transform: scale(0.6);
 }
 
-nav ul li #cover #s-circle {
+nav .over ul li #cover #s-circle {
   position: relative;
   top: -8px;
   left: 6px;
@@ -138,7 +145,7 @@ nav ul li #cover #s-circle {
   transition: 0.5s ease all;
 }
 
-nav ul li #cover form button span {
+nav .over ul li #cover form button span {
   position: absolute;
   top: 68px;
   left: 43px;
@@ -151,8 +158,8 @@ nav ul li #cover form button span {
   transition: 0.5s ease all;
 }
 
-nav ul li #cover form button span:before,
-nav ul li #cover form button span:after {
+nav .over ul li #cover form button span:before,
+nav .over ul li #cover form button span:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -165,7 +172,7 @@ nav ul li #cover form button span:after {
   transition: 0.5s ease all;
 }
 
-nav ul li #cover form #s-cover:hover #s-circle {
+nav .over ul li #cover form #s-cover:hover #s-circle {
   top: -1px;
   width: 67px;
   height: 15px;
@@ -174,7 +181,7 @@ nav ul li #cover form #s-cover:hover #s-circle {
   border-radius: 20px;
 }
 
-nav ul li #cover form #s-cover:hover span {
+nav .over ul li #cover form #s-cover:hover span {
   top: 50%;
   left: 56px;
   width: 25px;
@@ -182,17 +189,17 @@ nav ul li #cover form #s-cover:hover span {
   transform: rotateZ(0);
 }
 
-nav ul li #cover form #s-cover:hover button span:before {
+nav .over ul li #cover form #s-cover:hover button span:before {
   bottom: 11px;
   transform: rotateZ(52deg);
 }
 
-nav ul li #cover form #s-cover:hover button span:after {
+nav .over ul li #cover form #s-cover:hover button span:after {
   bottom: -11px;
   transform: rotateZ(-52deg);
 }
-nav ul li #cover form #s-cover:hover button span:before,
-nav ul li #cover form #s-cover:hover button span:after {
+nav .over ul li #cover form #s-cover:hover button span:before,
+nav .over ul li #cover form #s-cover:hover button span:after {
   right: -6px;
   width: 40px;
   background-color: #fff;
@@ -212,29 +219,69 @@ nav ul li #cover form #s-cover:hover button span:after {
   color: white;
 }
 
-nav ul .connexion-nav button {
+nav .over ul .connexion-nav button {
   background: none;
   border-radius: 30px;
   border: 2px solid white;
   padding: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  transition-duration: 0.5s;
   cursor: pointer;
   font-size: 20px;
   color: white;
 }
 
-nav ul .panier-nav {
-  margin-left: 40%;
+
+
+
+
+nav .over ul .panier-nav {
+  margin-left: 35%;
 }
 
-nav ul .connexion-nav {
+nav .over ul .connexion-nav {
   margin-left: 3%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+nav .under {
+  width: 99vw;
+  height: 0px;
+  margin-left: -100%;
+}
+
+.under.nav-menu {
+  margin-left: 0;
+  height: 90px;
+  visibility: visible;
+  margin-left: 0;
+}
+
+nav .under ul {
+  width: 99vw;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 25px;
+}
+
+nav .under.nav-menu ul li a {
+  visibility: visible;
+}
+
+nav .under ul li a {
+  visibility: hidden;
+}
+
+nav .under.nav-menu ul li:hover {
+  border-bottom: solid 3px rgb(61, 160, 252);
+}
+
+nav .under.nav-menu ul li:hover nav .under ul li a {
+  color: red;
 }
 
 .container {
@@ -258,5 +305,10 @@ nav ul .connexion-nav {
 section:nth-of-type(1) {
 }
 
-section:nth-of-type(2) {
+section:nth-of-type(1) h2{
+  font-size: 50px;
+  width: 800px;
+}
+  section:nth-of-type(2) {
+  border: 5px solid green;
 }

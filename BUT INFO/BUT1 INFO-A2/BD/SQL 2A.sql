@@ -258,15 +258,13 @@ end;
 
 /*================TD3====================*/
 
-
 /*create or replace package MAJ is 
 PROCEDURE CREER_EMPLOYE (LE_NUEMPL IN NUMBER, LE_NOMEMPL IN VARCHAR2, LE_HEBDO IN NUMBER, LE_AFFECT IN NUMBER,LE_SALAIRE IN NUMBER);
 END;
 
 --------------------------------------------------------------------------------------------------------------
 
-
-create or replace package  BODY MAJ is 
+create or replace package BODY MAJ is 
 PROCEDURE CREER_EMPLOYE (LE_NUEMPL IN NUMBER, LE_NOMEMPL IN VARCHAR2, LE_HEBDO IN NUMBER, LE_AFFECT IN NUMBER,LE_SALAIRE IN NUMBER) is
 BEGIN
 SET TRANSACTION READ WRITE;
@@ -287,29 +285,55 @@ ELSE
     RAISE_APPLICATION_ERROR (-20999,'Erreur inconnue'||SQLcode);
 END IF; 
 END;
-END;
-*/
+END;*/
+
 
 execute MAJ.creer_employe(20,'test',35,3,2000);
 execute MAJ.creer_employe(87,'test',35,8,2000);
-execute maj.creer_employe(87,'test',42,2,3000);
+execute maj.creer_employe(81,'test',35,2,2000);
+execute maj.creer_employe(86,'test',35,2,3000);
 
-execute maj.modifier_hebdo(81,21);
 
-/*
+execute maj.modifier_hebdo(21,125);
+execute maj.modifier_hebdo(30,23);
+
+execute maj.modifier_hebdo(20,23);
+
+execute maj.modifier_hebdo_duree_travail(20,492,15);
+
+update employe set salaire = 3000 where nuempl =39;
+
+select * from travail;
+
+
+
+
+
 Create or replace package lecture is
 type cur_empl is REF CURSOR ;
 procedure liste_employes( liste out cur_empl) ;
 end ; 
+
 
 Create or replace package BODY lecture is
 procedure liste_employes(liste out cur_empl) is
 begin
 open liste for select * from employe ;
  end ;
-end ;*/
+end ;
 
-variable li REFCURSOR ;
+
+/* b°) */ 
+variable li REFCURSOR;
 execute lecture.liste_employes(:li);
 print :li;
 
+/* c°) part 1 */
+variable lis REFCURSOR;
+execute lecture.liste_projets(30, :lis);
+print :lis;
+
+/* c°) part 2 */
+variable list REFCURSOR;
+execute lecture.liste_projets_services(1, :list);
+print :list;
