@@ -1,0 +1,2 @@
+RewriteEngine On
+FallbackResource /~E214194U/alex/td2/app/index.php

@@ -1,0 +1,129 @@
+drop table etudiant cascade constraints;
+drop table entreprise cascade constraints;
+drop table offre_stage cascade constraints;
+drop table souhait cascade constraints;
+drop table affect_stage_etudiant cascade constraint;
+
+
+create table etudiant (
+	numetudiant number(4) constraint Pk_etu primary key,
+	nometudiant char(20) not null);
+create table entreprise (
+	nument number(4) constraint Pk_ent primary key,
+	noment char(20) not null);
+create table offre_stage (
+	numoffre number(4) constraint Pk_offre primary key,
+	nument number(4) not null,
+      libelle char(40) not null,
+      remuneration number(10));
+create table souhait (
+	numetudiant number(4) not null constraint fk_etudiant references etudiant initially deferred,
+	numoffre number(4) not null constraint fk_offre_stage references offre_stage initially deferred,
+	constraint Pk_souhait primary key (numetudiant, numoffre));
+
+commit;
+
+
+insert into etudiant values (1,'Lea');
+insert into etudiant values (2,'Manon');
+insert into etudiant values (3,'Emma');
+insert into etudiant values (4,'Chloe');
+insert into etudiant values (5,'Camille');
+insert into etudiant values (6,'Lucas');
+insert into etudiant values (7,'Theo');
+insert into etudiant values (8,'Hugo');
+insert into etudiant values (9,'Thomas');
+insert into etudiant values (10,'Enzo');
+
+insert into entreprise values (10,'EDF');
+insert into entreprise values (20,'BNP Paribas');
+insert into entreprise values (30,'Total');
+insert into entreprise values (40,'Danone');
+insert into entreprise values (50,'Carrefour');
+
+insert into offre_stage values (201,20,'Surete des produits financiers',470);
+insert into offre_stage values (202,20,'Etude statistique du marche',470);
+insert into offre_stage values (401,40,'BD import-export',500);
+insert into offre_stage values (501,50,'Carte fidelite',600);
+insert into offre_stage values (101,10,'Evolution MOE',650);
+
+insert into souhait values (1,201);
+insert into souhait values (4,201);
+insert into souhait values (5,201);
+insert into souhait values (6,201);
+insert into souhait values (1,202);
+insert into souhait values (1,401);
+insert into souhait values (1,501);
+insert into souhait values (7,101);
+insert into souhait values (7,501);
+insert into souhait values (8,101);
+insert into souhait values (8,501);
+insert into souhait values (9,202);
+
+commit;
+
+
+-----------------------------
+
+create or replace trigger MaxSouhait after insert or update of numetudiant on souhait
+DECLARE
+REC_etudiant  etudiant%ROWTYPE;
+begin
+Select * into rec_etudiant from etudiant e where (select count(*) from souhait s where
+e.numetudiant=s.numetudiant)> 4 ;
+RAISE_APPLICATION_ERROR(-20202, 'max souhait  est atteint pour cet etudiant ou un autre etudiant ');
+EXCEPTION
+WHEN NO_DATA_FOUND THEN NULL; --0 enregistrement
+WHEN TOO_MANY_ROWS THEN
+RAISE_APPLICATION_ERROR (-20203, 'max souhait est atteint pour plusieurs etudiants ');
+END;
+------------------------------------------------------------------------
+
+create or replace package       MAJ_Lecture is
+type liste_souhaits is ref cursor;
+procedure liste_des_souhaits(le_numetudiant IN Number, liste out liste_souhaits);
+procedure ajout_souhait(le_numetudiant in number, le_numoffre in number);
+
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+create or replace package lecture is 
+type cur_empl is REF CURSOR;
+type cur_travail is REF CURSOR;
+type cur_concerne is REF CURSOR;
+procedure liste_employes(liste out cur_empl);
+procedure liste_projets (le_nuempl in number, liste2 out cur_travail);
+procedure liste_projets_services (le_nuserv in number, liste3 out cur_concerne);
+end;
+
+
+create or replace package BODY lecture is 
+procedure liste_employes(liste out cur_empl) is 
+begin 
+open liste for select nuempl, nomempl, affect from employe;
+end;
+
+procedure liste_projets (le_nuempl in number, liste2 out cur_travail) is
+begin
+open liste2 for select nomempl, nomproj, duree from travail t, employe e, projet p where t.nuempl = le_nuempl 
+and t.nuempl = e.nuempl 
+and t.nuproj = p.nuproj;
+end;
+
+procedure liste_projets_services (le_nuserv in number, liste3 out cur_concerne) is
+begin
+open liste3 for select c.nuserv, c.nuproj from concerne c, projet p where c.nuserv = le_nuserv 
+and p.nuproj = c.nuproj;
+end;
+end;

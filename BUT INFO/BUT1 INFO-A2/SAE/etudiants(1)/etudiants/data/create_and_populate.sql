@@ -1,0 +1,18 @@
+CREATE TABLE `teacher` (
+  `name` varchar(255) NOT NULL PRIMARY KEY ,
+  `grade` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DELIMITER $$
+CREATE TRIGGER teacher_grade_check BEFORE UPDATE ON teacher
+	FOR EACH ROW
+BEGIN
+	IF NEW.GRADE>20 THEN
+    	SET NEW.GRADE=20;
+	END IF;
+END$$
+DELIMITER ;
+
+INSERT INTO teacher VALUES ("Berdjugin",1);
+INSERT INTO teacher VALUES ("Jacquin",2);
+INSERT INTO teacher VALUES ("Remm",3);

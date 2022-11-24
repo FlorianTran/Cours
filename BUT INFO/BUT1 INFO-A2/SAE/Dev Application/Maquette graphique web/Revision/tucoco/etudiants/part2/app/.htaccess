@@ -1,3 +1,0 @@
-RewriteEngine On
-
-FallbackResource /~E213511C/eval/etudiants/part2/app/index.php

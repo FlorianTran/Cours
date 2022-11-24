@@ -27,6 +27,7 @@ body {
   margin: 0;
   max-width: 100%;
   background: url("wallpaperflare.jpg") center fixed;
+  background-size: cover;
 }
 
 a {
@@ -111,7 +112,7 @@ a {
   transition-duration: 200ms;
 }
 
-.Number{
+.QuantitySelector .Number{
   border-left: none;
   border-right: none;
   width: 40px;
@@ -127,7 +128,7 @@ a {
   border: solid 1px;
 }
 
-.img{
+.cartproduct .img{
   margin-right: 50px;
 }
 
@@ -153,20 +154,21 @@ a {
   max-width: 200px;
 }
 
-.ya{
+.priceandname .ya{
   white-space:nowrap;
   overflow: hidden; 
 }
 
-.name{
+.priceandname .name{
   width: 100%;
   font-weight: 900;
   margin-bottom: 15px;
   text-overflow: ellipsis;
 }
 
-.price{
+.productInformations .price{
   font-weight:lighter;
 }
 
+/*===========================Home==================================*/
 

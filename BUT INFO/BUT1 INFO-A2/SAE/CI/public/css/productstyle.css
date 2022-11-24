@@ -1,0 +1,170 @@
+.default-product .container {
+	display: flex;
+	position: relative;
+	top: 161px;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.15);
+	height: 85%;
+	border: 1px rgba(128, 128, 128, 0.301) solid;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+	backdrop-filter: blur(15px);
+	color: var(--font-color);
+}
+.default-product .container .product {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	gap: 50px;
+	flex-direction: row;
+}
+
+.default-product .container .product .left-container {
+	flex-grow: 1;
+	height: 100%;
+}
+
+.default-product .container .product .left-container .container-image {
+	height: 100%;
+}
+
+.default-product .container .product .left-container .product-image {
+	border-radius: 15px;
+	width: 100%;
+	height: 100%;
+}
+
+.default-product .container .product .left-container .product-image img {
+	background-size: cover;
+	border-radius: 15px;
+	width: 100%;
+	height: 100%;
+}
+
+.default-product .container .product .right-container {
+	flex-grow: 1;
+	background: rgba(204, 204, 204, 0.089);
+	border: 1px rgba(128, 128, 128, 0.301) solid;
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.37);
+	border-radius: 15px;
+	height: 100%;
+	backdrop-filter: blur(15px);
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	max-width: 60%;
+	min-width: 60%;
+}
+
+.default-product .right-container h3 {
+	font-size: 70px;
+	font-weight: bold;
+	font-family: 'Bebas Neue', cursive;
+	word-wrap: break-word;      
+}
+
+.default-product .right-container .numprod {
+	font-size: 15px;
+	color: var(--description-product);
+	flex-grow: 1;
+}
+
+.default-product .right-container .price {
+	flex-grow: 4;
+}
+
+.default-product .right-container .price p{
+	font-family: 'Bebas Neue', cursive;
+}
+
+.default-product .right-container .price p:nth-of-type(1) {
+	color: var(--classic-blue-color);
+	font-size: 60px;
+	
+}
+
+.default-product .right-container .price p:nth-of-type(2),p:nth-of-type(3) {
+	color: var(--description-product);
+	font-size: 20px;
+}
+
+.default-product .right-container h4 {
+	font-size: 30px;
+	flex-grow: 2;
+	font-family: 'Roboto';
+	letter-spacing: 0;
+}
+
+.default-product .right-container .shopping {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+
+.default-product .right-container .shopping button,
+.default-product .right-container .shopping select {
+	font-family: 'Bebas Neue', cursive;
+	border-radius: 0;
+	padding: 15px;
+	border: none;
+	font-size: 30px;
+	color: var(--font-color);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5%;
+	cursor: pointer;
+}
+
+.default-product .right-container .shopping select {
+	color: var(--description-product);
+	background-color: rgba(172, 172, 172, 0.103);
+	border: 1px rgba(24, 24, 24, 0.301) solid;
+	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.192);
+	filter: brightness(100);
+	width: 10%;
+}
+
+.default-product .right-container .shopping button:nth-of-type(1) {
+	background-color: rgba(172, 172, 172, 0.103);
+	border: 1px rgba(128, 128, 128, 0.301) solid;
+	box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.192);
+	transition-duration: 0.5s;
+}
+
+.default-product .right-container .shopping button:nth-of-type(1):hover {
+	background-color: rgba(139, 139, 139, 0.103);
+	border: 1px var(--classic-blue-color) solid;
+	color: var(--classic-blue-color);
+}
+
+.default-product .right-container .shopping button:nth-of-type(1) img {
+	height: 35px;
+	width: 28px;
+	position: relative;
+	top: -5px;
+	filter: invert(100%) sepia(55%) saturate(685%) hue-rotate(191deg)
+    brightness(108%) contrast(101%);
+	transition-duration: 0.5s;
+}
+
+.default-product .right-container .shopping button:nth-of-type(1):hover img {
+	filter: invert(55%) sepia(98%) saturate(2087%) hue-rotate(179deg) brightness(102%) contrast(101%);
+}
+
+.default-product .right-container .shopping button:nth-of-type(2) {
+	background-color: var(--classic-blue-color);
+	transition-duration: 0.5s;
+
+}
+
+.default-product .right-container .shopping button:nth-of-type(2):hover {
+	background-color: var(--classic-blue-hover-color)
+}
+

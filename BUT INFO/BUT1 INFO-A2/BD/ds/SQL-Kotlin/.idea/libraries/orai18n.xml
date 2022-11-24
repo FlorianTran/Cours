@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="orai18n" type="kotlin.js">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../../Téléchargements/orai18n.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

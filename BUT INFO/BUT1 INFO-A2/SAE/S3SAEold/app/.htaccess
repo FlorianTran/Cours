@@ -1,0 +1,3 @@
+RewriteEngine On
+
+FallbackResource /~E214194U/S3SAE/app/index.php

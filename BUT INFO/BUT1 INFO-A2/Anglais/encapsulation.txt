@@ -1,0 +1,21 @@
+
+---------------------------------------------------------------------------------------------------------
+Encapsulation:
+Permet de protégé les données
+permet de délimité les valeurs (ex: taille négative)
+En forcant les autres en codant avec des limites, cela permet de validé les paramètres
+Tu peux changé d'avis sur le setter plus tard sans casé le code des autre
+---------------------------------------------------------------------------------------------------------
+Encapsulating the gooddog class:
+n'importe où dans le code où on utlise une variable on peut utilisé une méthode call qui la renvoi 
+
+---------------------------------------------------------------------------------------------------------
+
+Comment se comporte des objets dans un tableau:
+
+---------------------------------------------------------------------------------------------------------
+Declaré et initialisé des variables d'instances
+différence entre variable local et une instance 
+
+---------------------------------------------------------------------------------------------------------
+Comparé les variables (primitives ou références)

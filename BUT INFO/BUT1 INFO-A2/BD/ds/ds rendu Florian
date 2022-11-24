@@ -1,0 +1,33 @@
+create or replace package MAJ_Lecture is
+type liste_souhaits is ref cursor;
+procedure liste_des_souhaits(le_numetudiant IN Number, liste out liste_souhaits);
+procedure ajout_souhait(le_numetudiant in number, le_numoffre in number);
+end;
+
+
+
+
+create or replace package BODY Lecture is 
+procedure liste_des_souhaits(le_numetudiant IN Number, liste out liste_souhaits) is 
+begin open liste for select numetudiant, numoffre, noment from etudiant e,entreprise en,souhait s, offre_stage o 
+where s.numetudiant = le_numetudiant 
+and s.numetudiant = e.numetudiant
+and o.numoffre = s.numoffre
+and o.nument = en.nument;
+end;
+
+procedure ajout_souhait(le_numetudiant in number, le_numoffre in number)
+begin
+set transaction read write;
+insert into souhait values(le_numetudiant,le_numoffre);
+commit;
+exception
+WHEN OTHERS THEN ROLLBACK;
+if SQLCODE=-20202 then rollback;
+RAISE_APPLICATION_ERROR(-202432, 'max souhait  est atteint pour cet etudiant ou un autre etudiant ');
+elsif SQLCODE=-20203 then rollback;
+RAISE_APPLICATION_ERROR (-20203, 'max souhait est atteint pour plusieurs etudiants ');
+ELSE RAISE_APPLICATION_ERROR (-20999,'Erreur inconnue'||SQLcode);
+END IF;
+END;
+END;
