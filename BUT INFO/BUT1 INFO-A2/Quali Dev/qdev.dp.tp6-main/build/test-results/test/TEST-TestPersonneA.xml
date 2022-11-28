@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestPersonneA" tests="12" skipped="0" failures="0" errors="0" timestamp="2022-11-25T10:41:40" hostname="DESKTOP-39S6DD1" time="0.159">
+  <properties/>
+  <testcase name="EURL ANONYME is a society()" classname="TestPersonneA" time="0.112"/>
+  <testcase name="AXBG azerty is not a person()" classname="TestPersonneA" time="0.005"/>
+  <testcase name="AXBG Azerty is a person()" classname="TestPersonneA" time="0.003"/>
+  <testcase name="SA a is not a society()" classname="TestPersonneA" time="0.002"/>
+  <testcase name="Azerty AXBG is a person()" classname="TestPersonneA" time="0.002"/>
+  <testcase name="SCP ANONYME is a society()" classname="TestPersonneA" time="0.003"/>
+  <testcase name="SA ANONYME is a society()" classname="TestPersonneA" time="0.002"/>
+  <testcase name="A X is a person()" classname="TestPersonneA" time="0.002"/>
+  <testcase name="SARL ANONYME is a society()" classname="TestPersonneA" time="0.003"/>
+  <testcase name="SCP X is a society()" classname="TestPersonneA" time="0.002"/>
+  <testcase name="azerty AXBG is not a person()" classname="TestPersonneA" time="0.003"/>
+  <testcase name="Sarl ANONYME is not a society()" classname="TestPersonneA" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

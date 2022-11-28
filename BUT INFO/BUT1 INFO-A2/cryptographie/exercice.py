@@ -1,9 +1,11 @@
+import copy
 import math
 import time
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import random as rd
+import hashlib as hash
 
 # -----------------------Exercice 1.1-----------------------#
 
@@ -171,7 +173,7 @@ def logDiscret(p, x):
     else:
         return "p not > x"
 
-#print(logDiscret(7,6))
+# print(logDiscret(7,6))
 
 
 def Shanks(p, x):
@@ -191,38 +193,156 @@ def Shanks(p, x):
 
 #print(Shanks(7, 6))
 
-def difftemp(p,x):
+def difftemp(p, x):
     t1 = time.time()
-    Shanks(p,x)
+    Shanks(p, x)
     t2 = time.time()
     t3 = t2-t1
     print("Tmps shanks: ", t3)
-    
+
     t1 = time.time()
-    logDiscret(p,x)
+    logDiscret(p, x)
     t2 = time.time()
     t3 = t2-t1
     print("Tmps logDiscret: ", t3)
 
-#difftemp(7,6)
+# difftemp(7,6)
 
 
 # -----------------------Exercice 5-----------------------#
 
-def key_creation():
-    prime = premiers(2000)
-    p = prime[rd.randrange(len(prime))]
+def alice_key_creation():
+    lst_premiers = premiers(2000)
+    p = 0
     while p < 1000:
-        p = prime[rd.randrange(len(prime))]
+        p = rd.choice(lst_premiers)
     g = generator(p)
-    a = rd.randrange(2,p-2)
+    a = rd.randint(2, p-2)
     A = g**a
-    return p,g,A,a
-
-print(key_creation())
+    return p, g, A, a
 
 
-def public_creation(p,g,A,a):
-    b = rd.randrange(2,p-2)
+def bob_key_creation(p, g):
+    lst_premiers = premiers(p-2)
+    b = 0
+    while b < 2:
+        b = rd.choice(lst_premiers)
     B = g**b
-    return p,g,B
+    return B, b
+
+
+def cut_message_in_packs(mess, size):
+    m = mess
+    paquets = []
+    while m > 0:
+        paquets.append(m % size)
+        m = m//1000
+    return paquets
+
+
+def crypt_packs(packs, A, b, p):
+    paquets = packs
+    crypted_packs = []
+    for i in paquets:
+        crypted_packs.append(i*(A**(b) % p))
+    return crypted_packs
+
+
+def decrypt_packs(crypted_packs, B, a, p):
+    decrypted_packs = []
+    pgcd, u, v = Euclide_etendu(B**a, p)
+    inv = u % p
+    for i in crypted_packs:
+        decrypted_packs.append(i*inv % p)
+    return decrypted_packs
+
+
+message = "Cristiano Ronaldo, SUIIIIIIIIIIIIIIIIIIIIIIIIII"
+
+print("\n\nMESSAGE NON CRYPTE :", message, " ||")
+print("\n\n/////////////--CLE PUBLIQUE D'ALICE--//////////////")
+p, g, A, a = alice_key_creation()
+print("p --> ", p)
+print("g -> ", g)
+print("A -> ", A)
+print("a -> ", a)
+B, b = bob_key_creation(p, g)
+print("\n\n/////////////--CLE PUBLIQUE DE BOB--//////////////")
+print("b --> ", b)
+print("B -> ", B)
+message_utf8 = message.encode()
+message_hash = hash.sha256(message_utf8).hexdigest()
+number_message_hash = int(message_hash, 16)
+print("\n\n/////////////--PROCESSUS DE CRYPTAGE--//////////////")
+pack_non_crypté = cut_message_in_packs(number_message_hash, 1000)
+print("\nmessage en paquets --> ", pack_non_crypté)
+pack_crypté = crypt_packs(pack_non_crypté, A, b, p)
+print("\nmessage en paquets cryptés --> ", pack_crypté)
+pack_décrypté = decrypt_packs(pack_crypté, B, a, p)
+print("\n\n/////////////--PROCESSUS DE DECRYPTAGE--//////////////")
+print("\nmessage en paquets décryptés par Alice --> ", pack_décrypté)
+
+
+# -----------------------Exercice 6-----------------------#
+
+
+def deg(A):
+    return len(A)
+
+
+def plus(A, B):
+    A = copy.deepcopy(A)
+    B = copy.deepcopy(B)
+    degA = deg(A)
+    degB = deg(B)
+    A.reverse()
+    B.reverse()
+    R = list()
+    for i in range(max(degA, degB)+1):
+        r = 0
+        if i <= degA:
+            r += A[i]
+        if i <= degB:
+            r += B[i]
+        R.append(r % 2)
+    R.reverse()
+    for i in range(len(R)):
+        ok = False
+        if R[i] != 0:
+            ok = True
+        if not ok:
+            return [0]
+    return R
+
+
+def create(n):
+    return [rd.randint(0, 1) for i in range(n)]
+
+
+# a = create(5)
+# print(a)
+# b = create(5)
+# print(b)
+
+# print(plus(a, b))
+
+
+def div_euclid_pol(A, B):
+    if deg(A) < deg(B):
+        return [0], A.copy()
+    Q = []
+    while deg(A) >= deg(B):
+        if A[0] == 0:
+            # dans tous les cas où la liste débute par des 0, je décale à droite
+            A = A[1:]
+        else:
+            if Q == []:
+                Q = [1] + [0] * (deg(A)-deg(B))
+                A = plus(A, B+[0]*(deg(A)-deg(B)))[1:]
+            else:
+                Q[deg(B)-deg(A)-1] = 1
+                A = plus(A, B*[0]*(deg(A), deg(B)))[1:]
+    R = list()
+    while len(A) > 1 and A[0] == 0:
+        A.pop(0)
+    return Q, A[-deg(B):].copy()
