@@ -1,0 +1,398 @@
+/*=========================Header==============================*/
+
+header {
+  color: white;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  width: 100%;
+  transition: all 0.5s;
+  border-bottom: 0px rgba(128, 128, 128, 0.301) solid;
+  backdrop-filter: blur(30px) opacity(0);
+  z-index: 1000;
+}
+
+header .nav:hover {
+  backdrop-filter: blur(30px) opacity(1);
+  border-bottom-width: 1px;
+}
+
+header .nav2 {
+  height: 100%;
+  backdrop-filter: blur(30px) opacity(1);
+}
+
+header .nav3 {
+  background: rgba(0, 0, 0, 0.568);
+  backdrop-filter: blur(30px) opacity(1);
+}
+
+header .over-container {
+  width: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+header .over-container p {
+  display: none;
+}
+
+header .over-container ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.over-container ul .logo-nav {
+  flex-grow: 1;
+}
+
+header .over-container ul .search-nav {
+  height: 90px;
+  flex-grow: 8;
+}
+
+header .over-container ul li {
+  justify-content: center;
+  align-items: center;
+}
+
+header .over-container ul li a {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+header .over-container ul li #cover .tb {
+  display: table;
+  position: relative;
+  top: 2px;
+  background-repeat: cover;
+}	
+
+
+header .over-container ul li #cover .td {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+header .over-container ul li #cover input,
+header .over-container ul li #cover button {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  width: 100%;
+}
+
+header .over-container ul li {
+  display: flex;
+  align-items: center;
+}
+
+header .over-container ul li #cover {
+  height: 48px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: none;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.171);
+  width: 80%;
+}
+
+header .over-container ul li #cover input[type="text"] {
+  font-size: 20px;
+  line-height: 1;
+}
+
+header .over-container ul li #cover input[type="text"]::placeholder {
+  color: rgb(175, 175, 175);
+}
+
+header .over-container ul li #cover form button {
+  display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  transform: scale(0.3);
+}
+
+header .over-container ul li #cover #s-circle {
+  position: relative;
+  top: -18px;
+  left: 6px;
+  width: 70px;
+  height: 70px;
+  margin-top: 0;
+  border: 12px solid #fff;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
+}
+
+header .over-container ul li #cover form button span {
+  position: absolute;
+  top: 53px;
+  left: 50px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
+}
+
+header .over-container ul li #cover form button span:before,
+header .over-container ul li #cover form button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+header .over-container ul li #cover form #s-cover:hover #s-circle {
+  top: 2px;
+  width: 67px;
+  height: 15px;
+  border-width: 0;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+header .over-container ul li #cover form #s-cover:hover span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+header .over-container ul li #cover form #s-cover:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+header .over-container ul li #cover form #s-cover:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+header .over-container ul li #cover form #s-cover:hover button span:before,
+header .over-container ul li #cover form #s-cover:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: #fff;
+}
+
+
+/* inside of the srcbar color */
+header .over-container::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+header .over-container:-ms-input-placeholder {
+  color: white;
+}
+
+header .over-container::-ms-input-placeholder {
+  color: white;
+}
+
+header .over-container .nav-links {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* use if connected*/
+header .connexion-nav button {
+  background: none;
+  border-radius: 30px;
+  border: 2px solid white;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+header .connexion-nav button:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+/* use if not connected */
+
+header .connexion-nav img {
+  position: relative;
+  top: 4px;
+  width: 38px;
+  filter: invert(100%) sepia(55%) saturate(685%) hue-rotate(191deg)
+    brightness(108%) contrast(101%);
+}
+
+header .cart-nav img {
+  width: 30px;
+  filter: invert(100%) sepia(55%) saturate(685%) hue-rotate(191deg)
+    brightness(108%) contrast(101%);
+}
+
+header .over-container li a:hover {
+  filter: invert(9%) sepia(7%) saturate(6%) hue-rotate(319deg) brightness(82%)
+    contrast(93%);
+}
+
+header .location-nav img {
+  width: 28px;
+  filter: invert(100%) sepia(55%) saturate(685%) hue-rotate(191deg)
+    brightness(108%) contrast(101%);
+}
+
+header .connexion-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (min-width: 800px) {
+  header .under-container {
+    height: 0;
+    transition-duration: 0.5s;
+  }
+}
+
+header .under-container.under-container2 {
+  opacity: 100;
+}
+
+header nav:hover .under-container {
+  opacity: 100;
+  height: 50px;
+}
+
+header .nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  height: 100%;
+}
+
+header .nav-item {
+  height: 100%;
+  text-align: center;
+}
+
+header .nav-item:hover .nav-link {
+  color: rgb(45, 171, 255);
+}
+
+header .under-container .nav-link {
+  position: relative;
+  transition-duration: 0.5s;
+  opacity: 0;
+}
+
+header .under-container .nav-link.nav-link2 {
+  opacity: 100;
+}
+
+header nav:hover .under-container .nav-link {
+  opacity: 100;
+}
+
+/*============================Responsive=====================================*/
+
+header .menu-btn {
+  width: 30px;
+  height: 30px;
+  display: none;
+  z-index: 100;
+}
+
+@media all and (min-width: 800px) {
+  header .hover {
+    margin-top: 23px;
+    width: 100%;
+    height: 3px;
+    background: rgb(45, 171, 255);
+    display: block;
+    transition-duration: 0.5s;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header nav {
+    backdrop-filter: blur(30px) opacity(1);
+    border-bottom-width: 1px;
+  }
+
+  header .over-container p {
+    display: block;
+  }
+  header .menu-btn {
+    display: block;
+    margin-right: 30px;
+  }
+  
+  header .over-container .nav-links {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    gap: 200px;
+    background: rgba(22, 22, 22, 0.904);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin-left: -100%;
+  }
+  
+  header .nav-links.mobile-menu {
+    margin-left: 0;
+  }
+  
+  header .over-container .nav-links li {
+    transform: scale(2);
+  }
+
+  header .under-container {
+    height: 50px;
+  }
+  
+  header .under-container.under-container2 {
+    height: 50px;
+  }
+
+  header .under-container ul {
+    font-size: 12px;
+  }
+
+  header .under-container .nav-link {
+    opacity: 100;
+    z-index: 0;
+  }
+}

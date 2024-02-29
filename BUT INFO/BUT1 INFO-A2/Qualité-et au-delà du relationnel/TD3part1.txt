@@ -1,0 +1,93 @@
+// Ex 2
+db.getCollection("Produit").find({})
+db.produit.insertMany([{'_id': 1,'libelle': 'orange','prixU':20,'dateFab': '2023-02-06T20:20:13Z'}])
+// Ex 3
+db.produit.find({'_id': 1})
+// Ex 4
+db.produit.updateOne({'_id':1},{$set : {'prixU':100}})
+// Ex 5
+db.produit.updateOne({'_id':1},{$set : {'Etat':'Fraiche'}})
+// Ex 6
+db.produit.updateOne({'_id':1},{$unset : {'Etat':'Fraiche'}})
+// Ex 7
+db.produit.deleteMany({'_id':1})
+// Ex 8
+db.produit.drop()
+// Ex 9
+db.produit.insertMany([{'_id': 1,'libelle': 'orange','prixU':20,'dateFab': '2023-02-06T20:20:13Z'}])
+// Ex 10
+db.produit.replaceOne({'_id':1},{'libelle':'Salade','prixU':20,'dateFab': '2023-02-06T20:20:13Z'})
+// Ex 11
+db.produit.insertMany([{'_id': 2,'libelle': 'chou','prixU':15,'dateFab': '2023-01-06T20:20:13Z'}])
+// Ex 12
+db.produit.updateMany(
+    {"dateFab":{"$gt":ISODate("2022-04-01T00:00:00.000Z")}},
+    {$set : {'qte': 0}}
+)
+// Ex 13
+db.produit.deleteOne({'_id':1})
+//Ex 14
+db.produit.find({'prixU': {$gte: 10}})
+// Ex 15
+db.produit.deleteMany({})
+// Ex 16
+db.produit.insertMany([
+    { '_id': 1, 'libelle': 'chou', 'prixU': 5, 'qte': 7, 'dateFab': new Date('2022-03-01T08:00:00Z') },
+    { '_id': 2, 'libelle': 'tomate', 'prixU': 10, 'qte': 2, 'dateFab': new Date('2021-03-01T08:00:00Z') },
+    { '_id': 3, 'libelle': 'oignon', 'prixU': 20, 'qte': 1, 'dateFab': new Date('2021-03-01T09:00:00Z') },
+    { '_id': 4, 'libelle': 'salade', 'prixU': 5, 'qte': 10, 'dateFab': new Date('2021-03-15T09:00:00Z') },
+    { '_id': 5, 'libelle': 'tomate', 'prixU': 5, 'qte': 20, 'dateFab': new Date('2021-04-04T11:21:39.736Z') },
+    { '_id': 6, 'libelle': 'chou', 'prixU': 10, 'qte': 10, 'dateFab': new Date('2021-04-04T21:23:13.331Z') },
+    { '_id': 7, 'libelle': 'oignon', 'prixU': 7.5, 'qte': 5, 'dateFab': new Date('2022-06-04T05:08:13Z') },
+    { '_id': 8, 'libelle': 'tomate', 'prixU': 7.5, 'qte': 10, 'dateFab': new Date('2022-09-10T08:43:00Z') },
+    { '_id': 9, 'libelle': 'tomate', 'prixU': 10, 'qte': 5, 'dateFab': new Date('2023-02-06T20:20:13Z') }
+])
+
+// Ex 17
+db.produit.find({})
+db.produit.aggregate([{$match:{}},{$project:{_id:1, libelle:1, prixU:1, qte:1, dateFab:1}}])
+// Ex 18
+db.produit.countDocuments()
+// Ex 19
+db.produit.find({
+  dateFab: {
+    $gte: new Date("2021-03-04T00:00:00Z"),
+    $lte: new Date("2023-04-05T00:00:00Z")
+  }
+})
+// Ex 20
+db.produit.find({ libelle: { $ne: "tomate" } })
+// Exo 21
+db.produit.aggregate([
+  { $match: { $expr: { $lt: [ { $strLenCP: "$libelle" }, 5 ] } } },
+  { $project: { prixU: 1 } }
+])
+// Ex 22
+db.produit.aggregate([{$match: {libelle: "chou"}}, {$project: {prixU:1,dateFab:1}}])
+db.produit.find({ libelle: "chou" }, { prixU: 1, dateFab: 1 })
+// Ex 23
+db.produit.aggregate([
+    {$match: {libelle: {$exists : true}}},
+    {$addFields: {origine: "France"}},
+    {$project: {libelle: 1, origine: 1}}
+])
+// Sans le addFields
+db.produit.updateMany(
+  { libelle: { $exists : true } },
+  { $set: { origine: "France" } }
+)
+db.produit.find()
+// Ex 24
+db.produit.aggregate([
+    {$match: {}},
+    {$addFields: {sum: { $multiply: ["$prixU", "$qte"] }}},
+    {$project: {libelle: 1,sum: 1}}
+])
+// Ex 25
+
+db.produit.aggregate([
+    {$group: {_id: "$libelle", moyPrix: {$avg: "$prixU"}}},
+    {$project: {libelle: 1, moyPrix: 1}}
+])
+
+db.produit.find({})

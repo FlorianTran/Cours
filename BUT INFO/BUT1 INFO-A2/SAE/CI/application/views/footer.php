@@ -1,1 +1,0 @@
-<script src=<?= base_url() . JS . "home.js" ?>></script>

@@ -128,22 +128,19 @@ def dechiff_affine(mess, a, b):
 # -----------------------Exercice 3.4-----------------------#
 
 
+
 def cass_chiff_affine(mess):
-    a = rd.randrange(1, 31)
-    b = rd.randrange(1, 31)
-    chiff_msg = chiffr_affine(mess, a, b)
-    nb = 0
+    chifmess = chiffr_affine(mess, rd.randrange(31), rd.randrange(31))
     for i in range(1, 31):
-        for j in range(1, 31):
-            rand_msg = chiffr_affine(mess, i, j)
-            if chiff_msg == rand_msg:
-                print("OG mess: " + mess + "; crypted mess: " + chiff_msg, a, b)
-                return nb, "Mess: " + chiff_msg + "[" + str(i)+";"+str(j) + "]"
-            print(nb, rand_msg)
-            nb += 1
+        for y in range(1, 31):
+            de = dechiff_affine(chifmess, i, y)
+            print(de, i, y)
+            if de == mess:
+                return "DECRYPT : "+de+" A="+str(i)+" B="+str(y)
+    return
 
 
-# print(cass_chiff_affine("bonjour"))
+print(cass_chiff_affine("bonjour"))
 
 # -----------------------Exercice 4.1-----------------------#
 
@@ -168,7 +165,7 @@ def logDiscret(p, x):
     if p > x:
         g = generator(p)
         for k in range(p-1):
-            if g**k % 7 == x:
+            if g**k % p == x:
                 return k
     else:
         return "p not > x"
@@ -250,7 +247,7 @@ def crypt_packs(packs, A, b, p):
 
 def decrypt_packs(crypted_packs, B, a, p):
     decrypted_packs = []
-    pgcd, u, v = Euclide_etendu(B**a, p)
+    _, u, _ = Euclide_etendu(B**a, p)
     inv = u % p
     for i in crypted_packs:
         decrypted_packs.append(i*inv % p)

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="iut.but2.tp1.TestUMLfileChainee" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-16T21:12:50" hostname="DESKTOP-39S6DD1" time="0.359">
-  <properties/>
-  <testcase name="attribute_fin()" classname="iut.but2.tp1.TestUMLfileChainee" time="0.348"/>
-  <testcase name="extend()" classname="iut.but2.tp1.TestUMLfileChainee" time="0.009"/>
-  <testcase name="attribute_debut()" classname="iut.but2.tp1.TestUMLfileChainee" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

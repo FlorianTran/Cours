@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestEntrepriseDepartementEmploye" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-12-03T12:58:00" hostname="DESKTOP-39S6DD1" time="0.033">
+  <properties/>
+  <testcase name="testRh()" classname="TestEntrepriseDepartementEmploye" time="0.028"/>
+  <testcase name="testSI()" classname="TestEntrepriseDepartementEmploye" time="0.001"/>
+  <testcase name="testEntreprise()" classname="TestEntrepriseDepartementEmploye" time="0.002"/>
+  <testcase name="testCompta()" classname="TestEntrepriseDepartementEmploye" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
